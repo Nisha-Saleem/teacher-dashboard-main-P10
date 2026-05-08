@@ -156,39 +156,40 @@ const DashboardView = () => {
                       )}
                     </div>
                   </div>
+                </div>
 
-                  <div className="dash-feedback-section">
-                    <label className="dash-feedback-label-wrapper">
-                      <span className="dash-feedback-label">
-                        Feedback <span className="dash-feedback-label-note">(Required for rejection)</span>
-                      </span>
-                      <textarea
-                        value={feedback}
-                        onChange={(e) => setFeedback(e.target.value)}
-                        className="dash-feedback-input"
-                        placeholder="Enter feedback for the students..."
-                      ></textarea>
-                    </label>
+                <div className="dash-feedback-section">
+                  <h4 className="dash-section-label">Provide Feedback</h4>
+                  <label className="dash-feedback-label-wrapper">
+                    <span className="dash-feedback-label">
+                      Feedback <span className="dash-feedback-label-note">(Required for rejection)</span>
+                    </span>
+                    <textarea
+                      value={feedback}
+                      onChange={(e) => setFeedback(e.target.value)}
+                      className="dash-feedback-input"
+                      placeholder="Enter feedback for the students..."
+                    ></textarea>
+                  </label>
+                </div>
 
-                    <div className="dash-actions-row">
-                      <button
-                        onClick={() => onUpdateStatus(selectedIdea.id, 'Rejected', feedback)}
-                        className="dash-btn dash-btn-outline dash-btn-reject"
-                        type="button"
-                      >
-                        <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>cancel</span>
-                        Reject
-                      </button>
-                      <button
-                        onClick={() => onUpdateStatus(selectedIdea.id, 'Accepted')}
-                        className="dash-btn dash-btn-primary"
-                        type="button"
-                      >
-                        <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>check_circle</span>
-                        Accept
-                      </button>
-                    </div>
-                  </div>
+                <div className="dash-actions-row">
+                  <button
+                    onClick={() => onUpdateStatus(selectedIdea.id, 'Rejected', feedback)}
+                    className="dash-btn dash-btn-outline dash-btn-reject"
+                    type="button"
+                  >
+                    <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>cancel</span>
+                    Reject
+                  </button>
+                  <button
+                    onClick={() => onUpdateStatus(selectedIdea.id, 'Accepted')}
+                    className="dash-btn dash-btn-primary"
+                    type="button"
+                  >
+                    <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>check_circle</span>
+                    Accept
+                  </button>
                 </div>
               </div>
             )}
