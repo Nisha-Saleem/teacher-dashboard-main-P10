@@ -46,6 +46,17 @@ const Upload = () => {
     setAnnouncement('');
   };
 
+  const handleSendAnnouncement = () => {
+    if (announcement.trim()) {
+      // Simulate sending announcement to students
+      alert(`Announcement sent to students: "${announcement}"`);
+      // Clear announcement after sending
+      setAnnouncement('');
+    } else {
+      alert('Please enter an announcement before sending');
+    }
+  };
+
   const handleDeleteFile = (fileId) => {
     setUploadedFiles(prev => prev.filter(file => file.id !== fileId));
   };
@@ -78,10 +89,10 @@ const Upload = () => {
               className="announcement-input"
             />
             <button
-              onClick={handleClearAnnouncement}
-              className="clear-btn"
+              onClick={handleSendAnnouncement}
+              className="send-btn"
             >
-              Clear
+              Send
             </button>
           </div>
 
