@@ -64,32 +64,19 @@ const Navigation = () => {
             </Link>
           </nav>
         </div>
-        {/* Footer */}
-        <div className="p-4 border-t border-slate-200 dark:border-slate-800">
-          <button className="flex items-center gap-3 px-3 py-2 text-slate-500 dark:text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 transition-colors w-full">
-            <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>settings</span>
-            <p className="text-xs font-medium">Settings</p>
-          </button>
-        </div>
-      </aside>
+              </aside>
 
       {/* Main Content Area */}
       <main className="main-content">
         {/* Header */}
         <header className="header">
-          <div className="header-breadcrumb">
-            <span>Teacher Admin</span>
-            <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>chevron_right</span>
-            <span className="current">
-              {location.pathname === '/dashboard' ? 'Dashboard' : 
-               location.pathname === '/allideas' ? 'All Ideas' : 'Student Progress'}
-            </span>
-          </div>
           <div className="header-actions">
-            <button className="notification-btn">
-              <span className="material-symbols-outlined">notifications</span>
-              <span className="notification-dot"></span>
-            </button>
+            {location.pathname === '/dashboard' && (
+              <button className="notification-btn">
+                <span className="material-symbols-outlined">notifications</span>
+                <span className="notification-dot"></span>
+              </button>
+            )}
           </div>
         </header>
 

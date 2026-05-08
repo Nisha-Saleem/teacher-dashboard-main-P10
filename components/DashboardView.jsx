@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { INITIAL_IDEAS } from '../data';
 import '../styles/DashboardView.css';
 
@@ -7,10 +7,7 @@ const DashboardView = () => {
   const pendingIdeas = ideas.filter(i => i.status === 'Pending');
   const [selectedId, setSelectedId] = useState(null);
   const [feedback, setFeedback] = useState('');
-  const [uploadedFile, setUploadedFile] = useState(null);
-  const [uploadSuccess, setUploadSuccess] = useState(false);
-  const fileInputRef = useRef(null);
-
+  
   // Auto-select first item if none selected or current selection is no longer pending
   useEffect(() => {
     if (pendingIdeas.length > 0) {
@@ -25,54 +22,7 @@ const DashboardView = () => {
 
   const selectedIdea = pendingIdeas.find(i => i.id === selectedId);
 
-  const handleFileSelect = (file) => {
-    const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'application/pdf'];
-    if (allowedTypes.includes(file.type)) {
-      setUploadedFile(file);
-      setUploadSuccess(false);
-    } else {
-      alert('Please upload only JPG, PNG, or PDF files');
-    }
-  };
-
-
-
-
-  const handleFileInputChange = (e) => {
-    if (e.target.files && e.target.files[0]) {
-      const file = e.target.files[0];
-      handleFileSelect(file);
-    }
-  };
-
-  const handleUpload = () => {
-    if (uploadedFile) {
-      // Simulate upload process
-      setTimeout(() => {
-        setUploadSuccess(true);
-        setTimeout(() => {
-          setUploadedFile(null);
-          setUploadSuccess(false);
-        }, 3000);
-      }, 1000);
-    }
-  };
-
-  const handleButtonClick = () => {
-    if (uploadedFile) {
-      handleUpload();
-    } else {
-      fileInputRef.current?.click();
-    }
-  };
-
-
-  const getFileIcon = (type) => {
-    if (type.startsWith('image/')) return 'image';
-    if (type === 'application/pdf') return 'picture_as_pdf';
-    return 'description';
-  };
-
+  
   return (
     <div className="dash-page">
       <div className="dash-header-row">
@@ -81,53 +31,7 @@ const DashboardView = () => {
           <p className="dash-subtitle">Review new student project proposals requiring your approval.</p>
         </div>
 
-        <div className="dash-header-actions">
-          <div className="dash-upload-wrapper">
-            <input
-              ref={fileInputRef}
-              type="file"
-              accept=".jpg,.jpeg,.png,.pdf"
-              onChange={handleFileInputChange}
-              className="dash-file-input-hidden"
-            />
-
-            {!uploadSuccess ? (
-              <div className="dash-upload-inline">
-                {uploadedFile && (
-                  <div className="dash-upload-filechip">
-                    <span className="material-symbols-outlined dash-upload-filechip-icon">
-                      {getFileIcon(uploadedFile.type)}
-                    </span>
-                    <span className="dash-upload-filechip-name">{uploadedFile.name}</span>
-                    <button
-                      onClick={() => setUploadedFile(null)}
-                      className="dash-upload-filechip-close"
-                      type="button"
-                      aria-label="Remove selected file"
-                    >
-                      <span className="material-symbols-outlined dash-upload-filechip-close-icon">close</span>
-                    </button>
-                  </div>
-                )}
-
-                <button
-                  onClick={handleButtonClick}
-                  className="dash-btn dash-btn-primary dash-btn-upload"
-                  type="button"
-                >
-                  <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>upload</span>
-                  {uploadedFile ? 'Upload' : 'Upload Project'}
-                </button>
               </div>
-            ) : (
-              <div className="dash-upload-success">
-                <span className="material-symbols-outlined dash-upload-success-icon">check_circle</span>
-                Uploaded!
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
 
       {pendingIdeas.length === 0 ? (
         <div className="dash-empty">
