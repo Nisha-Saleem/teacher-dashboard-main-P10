@@ -14,7 +14,7 @@ const ProgressView = () => {
       <div className="prog-header">
         <div className="prog-header-text">
           <h2 className="prog-title">Student Progress</h2>
-          <p className="prog-subtitle">Track milestones and task completion for all project groups.</p>
+          <p className="prog-subtitle">Track project progress of all student groups.</p>
         </div>
 
         <div className="prog-tabs-wrapper">

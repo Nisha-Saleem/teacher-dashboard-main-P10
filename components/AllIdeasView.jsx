@@ -21,7 +21,7 @@ const AllIdeasView = () => {
     <div className="ideas-page">
       <div className="ideas-header">
         <h2 className="ideas-title">All Ideas</h2>
-        <p className="ideas-subtitle">Manage approved and rejected project proposals across all sessions.</p>
+        <p className="ideas-subtitle">Manage approved and rejected FYP across all sessions.</p>
       </div>
 
       <div className="ideas-tabs-wrapper">
