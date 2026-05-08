@@ -22,6 +22,40 @@ const DashboardView = () => {
 
   const selectedIdea = pendingIdeas.find(i => i.id === selectedId);
 
+  const onUpdateStatus = (ideaId, newStatus, feedbackText = '') => {
+    // Update idea status
+    setIdeas(prevIdeas => 
+      prevIdeas.map(idea => 
+        idea.id === ideaId ? { ...idea, status: newStatus } : idea
+      )
+    );
+    
+    // Clear feedback and selection
+    setFeedback('');
+    
+    // If accepting, auto-select the next pending idea
+    if (newStatus === 'Accepted') {
+      const updatedPendingIdeas = ideas.filter(i => i.status === 'Pending' && i.id !== ideaId);
+      if (updatedPendingIdeas.length > 0) {
+        // Find the next pending idea (first in list)
+        const nextPendingIdea = updatedPendingIdeas[0];
+        setSelectedId(nextPendingIdea.id);
+      } else {
+        // No more pending ideas, clear selection
+        setSelectedId(null);
+      }
+    } else if (newStatus === 'Rejected') {
+      // If rejecting, auto-select the next pending idea
+      const updatedPendingIdeas = ideas.filter(i => i.status === 'Pending' && i.id !== ideaId);
+      if (updatedPendingIdeas.length > 0) {
+        const nextPendingIdea = updatedPendingIdeas[0];
+        setSelectedId(nextPendingIdea.id);
+      } else {
+        setSelectedId(null);
+      }
+    }
+  };
+
   
   return (
     <div className="dash-page">
