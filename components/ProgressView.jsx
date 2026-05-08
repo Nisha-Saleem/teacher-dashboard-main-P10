@@ -86,12 +86,7 @@ const ProgressView = () => {
                 </div>
               </div>
 
-              <div className="prog-card-action">
-                <button className="prog-btn-view">
-                  <span>View Full Progress</span>
-                  <span className="material-symbols-outlined prog-btn-view-icon">arrow_forward</span>
-                </button>
-              </div>
+              
             </div>
           ))
         )}

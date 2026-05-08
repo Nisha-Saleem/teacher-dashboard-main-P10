@@ -216,37 +216,8 @@
   font-weight: 500;
 }
 
-/* Action Section */
-.prog-card-action {
-  margin-top: 0.25rem;
-}
 
-.prog-btn-view {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.25rem;
-  width: 100%;
-  padding: 0.5rem 1rem;
-  background-color: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 0.5rem;
-  color: #475569;
-  font-size: 0.875rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
 
-.prog-btn-view:hover {
-  background-color: #f1f5f9;
-  color: #1e293b;
-  border-color: #cbd5e1;
-}
-
-.prog-btn-view-icon {
-  font-size: 16px;
-}
 
 /* Empty State */
 .prog-empty {
