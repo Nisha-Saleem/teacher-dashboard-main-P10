@@ -28,8 +28,8 @@ const Navigation = () => {
               style={{ backgroundImage: 'url("https://picsum.photos/200")' }}
             ></div>
             <div className="user-info">
-              <h1>Mrs. Anderson</h1>
-              <p>Project Coordinator</p>
+              <h1>Prof. Usman Ahmed</h1>
+              <p>Teacher panel</p>
             </div>
           </div>
           {/* Navigation */}
