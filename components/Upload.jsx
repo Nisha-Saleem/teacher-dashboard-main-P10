@@ -73,7 +73,7 @@ const Upload = () => {
         <div className="upload-left">
           <div className="upload-header">
             <h2 className="upload-title">Upload System</h2>
-            <p className="upload-subtitle">Share your materials with the team</p>
+            <p className="upload-subtitle">Share your materials with the Students</p>
           </div>
 
           {/* Announcement Section */}
