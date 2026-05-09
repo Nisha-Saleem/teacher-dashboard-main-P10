@@ -144,12 +144,20 @@
   font-weight: 500;
 }
 
+.prog-card-leader-progress {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
 /* Progress Section */
 .prog-card-progress {
   display: flex;
   flex-direction: column;
-  gap: 0.125rem;
+  gap: 0.25rem;
   overflow: hidden;
+  min-width: 300px;
 }
 
 .prog-progress-header {
@@ -174,7 +182,7 @@
 
 .prog-progress-bar-bg {
   width: 100%;
-  height: 0.5rem;
+  height: 0.75rem;
   background-color: #f1f5f9;
   border-radius: 999px;
   overflow: hidden;

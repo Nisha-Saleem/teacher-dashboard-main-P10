@@ -58,31 +58,32 @@ const ProgressView = () => {
                   Group {String.fromCharCode(65 + index)}
                 </div>
                 <h3 className="prog-card-title">{idea.title}</h3>
-                <p className="prog-card-leader">
-                  Leader: <span>{idea.leader.name}</span>
-                </p>
-              </div>
-
-              <div className="prog-card-progress">
-                <div className="prog-progress-header">
-                  <span className="prog-progress-label">Completion</span>
-                  <span className="prog-progress-value">{idea.progress}%</span>
-                </div>
-                <div className="prog-progress-bar-bg">
-                  <div
-                    className={`prog-progress-bar-fill ${
-                      idea.progress > 80
-                        ? 'prog-progress-bar-emerald'
-                        : idea.progress > 50
-                          ? 'prog-progress-bar-primary'
-                          : 'prog-progress-bar-amber'
-                    }`}
-                    style={{ width: `${idea.progress}%` }}
-                  ></div>
-                </div>
-                <div className="prog-progress-milestones">
-                  <span>{idea.milestones.current}</span>
-                  <span>{idea.milestones.next}</span>
+                <div className="prog-card-leader-progress">
+                  <p className="prog-card-leader">
+                    Leader: <span>{idea.leader.name}</span>
+                  </p>
+                  <div className="prog-card-progress">
+                    <div className="prog-progress-header">
+                      <span className="prog-progress-label">Completion</span>
+                      <span className="prog-progress-value">{idea.progress}%</span>
+                    </div>
+                    <div className="prog-progress-bar-bg">
+                      <div
+                        className={`prog-progress-bar-fill ${
+                          idea.progress > 80
+                            ? 'prog-progress-bar-emerald'
+                            : idea.progress > 50
+                              ? 'prog-progress-bar-primary'
+                              : 'prog-progress-bar-amber'
+                        }`}
+                        style={{ width: `${idea.progress}%` }}
+                      ></div>
+                    </div>
+                    <div className="prog-progress-milestones">
+                      <span>{idea.milestones.current}</span>
+                      <span>{idea.milestones.next}</span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
