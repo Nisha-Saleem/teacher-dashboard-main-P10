@@ -159,7 +159,6 @@ const DashboardView = () => {
                 </div>
 
                 <div className="dash-feedback-section">
-                  <h4 className="dash-section-label">Provide Feedback</h4>
                   <label className="dash-feedback-label-wrapper">
                     <span className="dash-feedback-label">
                       Feedback <span className="dash-feedback-label-note">(Required for rejection)</span>
