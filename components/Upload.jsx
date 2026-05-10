@@ -89,11 +89,11 @@ const Upload = () => {
               className="announcement-input"
             />
             <button
-              onClick={handleSendAnnouncement}
-              className="send-btn"
-            >
-              Send
-            </button>
+                onClick={handleClearAnnouncement}
+                className="clear-btn"
+              >
+                Clear
+              </button>
           </div>
 
           {/* File Upload Section */}
